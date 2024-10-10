@@ -1,8 +1,16 @@
-<!--Entry Point of Server; Routing to other pages are configured here-->
+<!--DO NOT MOVE THIS FILE OUT OF ROOT DIR-->
+<!--Declare any styling to be kept constant ACROSS ALL WEBPAGES HERE-->
 
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <NuxtPage />
+
   </div>
 </template>
+
+<script setup lang="ts"> // Support TypeScript
+</script>
+
+<style>
+</style>

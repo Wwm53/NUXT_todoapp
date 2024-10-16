@@ -1,9 +1,10 @@
-<!--index.vue will become the login page-->
+<!--pages/login.vue-->
+<!--New default landing page redirected from 'index.vue'-->
 
 <template>
     <div>
         <br>
-        <h2 class="text-center text-primary">Welcome to TODOAPP (index.vue)</h2>  
+        <h2 class="text-center text-primary">Welcome to TODOAPP</h2>  
 
         <!--A form within a box/container-->
         <div class="container mt-5"> <!--Margin Top-->
@@ -40,9 +41,8 @@
 </script>
 
 <!--FOLLOW UP ACTIONS:
-Build index.vue and to automatically redirect to login.vue; DO NOT CLUMP IN APP.VUE
 Build a simple Database
-After pressing 'Sign In' definitely need to use JS to process and verify user input
+After pressing 'Sign In' build JS function to process and verify user input
 or maybe use v-if/v-else (VUE)
 -->
 

@@ -40,8 +40,14 @@
 </script>
 
 <!--FOLLOW UP ACTIONS:
-Setting up ESLINT
+Build index.vue and to automatically redirect to login.vue; DO NOT CLUMP IN APP.VUE
 Build a simple Database
 After pressing 'Sign In' definitely need to use JS to process and verify user input
 or maybe use v-if/v-else (VUE)
+-->
+
+<!--Issues:
+1. ESLint: Can't seem to bypass 'multi-word component error', despite changing ESLint configs
+
+
 -->

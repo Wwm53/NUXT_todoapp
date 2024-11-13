@@ -7,27 +7,32 @@
         <title>Login</title>
         <h2 class="text-center text-primary">Welcome to TODOAPP</h2>  
 
-        <!--A form within a box/container-->
+        <!--A form within a container-->
         <div class="container mt-5"> <!--Margin Top-->
-            <div class="card" style="max-width: 400px; margin: auto;"> <!--Max width and center-->
+            <div class="card" style="max-width: 400px; margin: auto;">
+
                 <form @submit.prevent="processBtn" class="card-body">
-                    <div class="mb-3"> <!--Margin Bottom--> 
+                    <div class="mb-3"> <!--Margin Bottom-->
                         <label for="email" class="form-label">Email Address</label>
-                        <input v-model="email" class="form-control" id="email" placeholder="Email Address" required>
-            </div> 
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input v-model="password" type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+                        <input v-model="email" type="email" class="form-control" id="email" placeholder="Email Address" required>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input v-model="password" type="password" class="form-control" id="password" placeholder="Password" @keyup="checkCapsLock($event)"> <!--Keyup checks state of CapsLock-->
+                        <span v-if="isCapsLockON === true" style="color: red">Caps Lock is ON</span>
+                    </div>
+
+                    <p v-if="loginError" class="text-danger text-center"> {{ loginError }}</p>
+                    <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
         </div>
     </div>
-        <br>
+    <br>
 
         <!--External Links-->
         <div class="d-flex justify-content-center">
-            <NuxtLink to="https://github.com/nuxt" target="_blank" no-rel class="me-3"> <!--Link to GitHub Web-->
+            <NuxtLink to="https://github.com/nuxt" target="_blank" no-rel class="me-3">
                 Nuxt GitHub
             </NuxtLink>
             <NuxtLink to="/about"> <!--Link to 'about.vue'-->
@@ -46,34 +51,23 @@ import { useRouter } from'vue-router';
 const email = ref('')
 const password = ref('')
 const router = useRouter();
+const loginError = ref('');
+const isCapsLockON = ref('')
+
 
 // JS Function to process/validate data
 function processBtn() {
-    if (!email.value || !password.value) {
-        alert("Please enter a valid email and/or password!") // If either/both values are missing
-        return;
-    }
+    loginError.value = ''; // Clear value
 
-    else if ((email.value === "user1@gmail.com") && (password.value === "user1password")) {
-        router.push('about_2'); // Both Credentials are correct, will reroute to mainpage
+    if (email.value === "user1@gmail.com" && password.value == 'user1P@ssw0rd') { // Modify to include SUPABASE table for authentication
+        router.push('/home');
     }
-
     else {
-        alert("Invalid Email and/or Password! Please try again.") // 1 or both credentials are incorrect
+        loginError.value = "Invalid Email or Password. Please try again." // Eliminates use of pop-up + Better aesthetics
     }
 }
+
+function checkCapsLock(event) {
+    isCapsLockON.value = event.getModifierState('CapsLock'); 
+}
 </script>
-
-<!--FOLLOW UP ACTIONS:
-Complete 'about.vue' style setup [DONE]
-
-Build a simple Database
-After pressing 'Sign In' build JS function to process and verify user input
-or maybe use v-if/v-else (VUE)
--->
-
-<!--Issues:
-1. ESLint: Can't seem to bypass 'multi-word component error', despite changing ESLint configs
-
-
--->

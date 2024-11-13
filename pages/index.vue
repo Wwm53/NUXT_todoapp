@@ -3,7 +3,7 @@
 
 <template>
     <div class="text-center">
-        <h2>Redirecting to Login......</h2>
+        <h4>Redirecting to Login......</h4>
     </div>
     
 </template>

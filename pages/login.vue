@@ -46,6 +46,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from'vue-router';
+import { createClient } from '@supabase/supabase-js';
+const supabase = createClient('https://fwqlshkaqymgeynycmmb.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3cWxzaGthcXltZ2V5bnljbW1iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEzOTkzMTIsImV4cCI6MjA0Njk3NTMxMn0.EIZrwerwS1-MR8xT0Vq7_i0KygE5zY9egAPXwoYQgV0')
+const sql_auth_list = ref([])
 
 // Declare REACTIVE Variable for user input
 const email = ref('')
@@ -55,19 +58,33 @@ const loginError = ref('');
 const isCapsLockON = ref('')
 
 
-// JS Function to process/validate data
-function processBtn() {
+async function getList() {
+    const { data } = await supabase.from('sql_auth_list').select('email , password')
+    sql_auth_list.value = data
+}
+
+onMounted(() => {
+    getList()
+})
+
+
+async function processBtn() {
     loginError.value = ''; // Clear value
 
-    if (email.value === "user1@gmail.com" && password.value == 'user1P@ssw0rd') { // Modify to include SUPABASE table for authentication
-        router.push('/home');
-    }
+    const user = sql_auth_list.value.find(user => // Checks user input with 'sql_auth_list' from SUPABASE
+        user.email === email.value && user.password === password.value
+    );
+
+    if (user) { // Correct credentials
+        router.push('/home'); }
     else {
         loginError.value = "Invalid Email or Password. Please try again." // Eliminates use of pop-up + Better aesthetics
     }
 }
 
+
 function checkCapsLock(event) {
     isCapsLockON.value = event.getModifierState('CapsLock'); 
 }
+
 </script>

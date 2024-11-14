@@ -4,13 +4,24 @@
 --> Platform: SUPABASE
 Establish and understand SUPABASE Connection to NUXT using sample data first [DONE]
 
-1.1. Using SQL_AUTH_LIST on SUPABASE, use it to counter-check for correct credentials before pushing user to homepage (home.vue)
+1.1. Using SQL_AUTH_LIST on SUPABASE, use it to counter-check for correct credentials before pushing user to homepage (home.vue)  [DONE]
 1.2. Build another table on SUPABASE that displays USER-SPECIFIC INFO, i.e. TO-DO LIST ONLY FOR THAT USER
 1.3. Features for user to modify todo list, should be done before on VUE just bring over
 
 
 
-**Issues:
+**Issues:   
 1. ESLint: Can't seem to bypass 'multi-word component error', despite changing ESLint configs [FIXED]
 --> bypassed issue by using multi-word filename
 
+
+**
+databse normalise (4th normal form)
+sql statemwent syntax
+
+--create needed tables using sql editor
+
+supbase sql wrapper (js-> sql)
+
+
+Update progress on 29 Nov (fri) or 2 dec (mon)

@@ -16,12 +16,16 @@ Establish and understand SUPABASE Connection to NUXT using sample data first [DO
 
 
 **
-databse normalise (4th normal form)
-sql statemwent syntax
-
---create needed tables using sql editor
-
-supbase sql wrapper (js-> sql)
+databse normalise (4th normal form) [DONE]
+sql statemwent syntax [DONE]
+--JOINS [DONE]
+--FOREIGN KEYS [DONE]
 
 
-Update progress on 29 Nov (fri) or 2 dec (mon)
+--CRUD
+--HTML post & get
+--create needed tables using sql editor [for my app]
+
+supabase sql wrapper (js-> sql)
+
+

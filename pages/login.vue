@@ -59,10 +59,12 @@ const isCapsLockON = ref('')
 
 
 async function getList() {
+    // Fetches data from SUPABASE
     const { data } = await supabase.from('sql_auth_list').select('email , password')
     sql_auth_list.value = data
 }
 
+// Ensures 'getList' is executed at correct time
 onMounted(() => {
     getList()
 })
@@ -84,7 +86,7 @@ async function processBtn() {
 
 
 function checkCapsLock(event) {
-    isCapsLockON.value = event.getModifierState('CapsLock'); 
+    isCapsLockON.value = event.getModifierState('CapsLock');
 }
 
 </script>

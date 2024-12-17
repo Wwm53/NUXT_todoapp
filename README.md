@@ -1,6 +1,6 @@
 **Always setup SSH keys on new device before pushing/pulling repos from online to local OR VICE VERSA**
 
-Issue: Now everything is broken
+Issue: Now everything is broken (FIX LOCALSTORAGE first)
 
 1st: figure out first_name dynamic input
 -figure out how to build different 'account pages' by users

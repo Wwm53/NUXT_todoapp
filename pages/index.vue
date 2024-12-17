@@ -2,6 +2,7 @@
 <!--Default Landing page used to be redirected to 'login.vue', the NEW default landing page-->
 
 <template>
+    <br>
     <div class="text-center">
         <h4>Redirecting to Login......</h4>
     </div>

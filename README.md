@@ -1,3 +1,11 @@
+Issue: Now everything is broken
+
+1st: figure out first_name dynamic input
+-figure out how to build different 'account pages' by users
+
+
+2nd: integrating vue_todo into nuxt  
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

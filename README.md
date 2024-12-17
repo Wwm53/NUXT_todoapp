@@ -1,3 +1,5 @@
+**Always setup SSH keys on new device before pushing/pulling repos from online to local OR VICE VERSA**
+
 Issue: Now everything is broken
 
 1st: figure out first_name dynamic input

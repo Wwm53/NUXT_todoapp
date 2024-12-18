@@ -1,6 +1,8 @@
 **Always setup SSH keys on new device before pushing/pulling repos from online to local OR VICE VERSA**
+**Always pull from Github 1st before starting on any work**
 
 Issue: Now everything is broken (FIX LOCALSTORAGE first)
+test to push from local to remote (github)
 
 1st: figure out first_name dynamic input
 -figure out how to build different 'account pages' by users

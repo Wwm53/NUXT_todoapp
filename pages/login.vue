@@ -85,6 +85,11 @@ async function processBtn() {
     if (user) {
             localStorage.setItem('user_email', user.email) // Store user session to redirect to user homepage
             router.push('/home'); } // Route to user homepage
+        if (process.client) {
+            localStorage.setItem('user_email', user.email) // Store user session to redirect to user homepage
+        }
+        
+        router.push('/home'); } // Route to user homepage
         
     else {
         loginError.value = "Invalid Email or Password. Please try again." // Eliminates use of pop-up + Better aesthetics

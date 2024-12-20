@@ -30,11 +30,12 @@
     </div>
     <br>
 
-        <!--External Links-->
+        <!--External Links use 'href'-->
+        <!--Internal Links use 'NUXTLINK'-->
         <div class="d-flex justify-content-center">
-            <NuxtLink to="https://github.com/nuxt" target="_blank" no-rel class="me-3">
+            <a href="https://github.com/nuxt" target="_blank" no-rel class="me-3">
                 Nuxt GitHub
-            </NuxtLink>
+            </a>
             <NuxtLink to="/about"> <!--Link to 'about.vue'-->
                 About This Page
             </NuxtLink>
@@ -55,7 +56,7 @@ const email = ref('')
 const password = ref('')
 const router = useRouter();
 const loginError = ref('');
-const isCapsLockON = ref('')
+const isCapsLockON = ref('');
 
 
 async function getList() {
@@ -65,9 +66,9 @@ async function getList() {
     if (error) {
         console.error('Error fetching data:', error.message); // Error message from SUPABASE
         return;
+    } else { 
+        auth_list.value = data; 
     }
-
-    auth_list.value = data
 }
 
 // Ensures 'getList' is executed at correct time (only after data is returned)
@@ -83,10 +84,8 @@ async function processBtn() {
     );
 
     if (user) {
-            localStorage.setItem('user_email', user.email) // Store user session to redirect to user homepage
-            router.push('/home'); } // Route to user homepage
-
-    else {
+            router.push('/home'); // Route to user homepage
+    } else {
         loginError.value = "Invalid Email or Password. Please try again." // Eliminates use of pop-up + Better aesthetics
     }
 }

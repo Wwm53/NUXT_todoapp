@@ -1,5 +1,6 @@
 <template>
   <div>
+    <br>
     <title>About Page</title>
     <h2 class="text-center text-primary">About This Page</h2>
     <br>

@@ -61,7 +61,7 @@ const isCapsLockON = ref('');
 
 async function getList() {
     // Fetches data from SUPABASE
-    const { data, error } = await supabase.from('sql_auth_list').select('email , password');
+    const { data, error } = await supabase.from('sql_auth_list').select('*');
 
     if (error) {
         console.error('Error fetching data:', error.message); // Error message from SUPABASE
@@ -84,7 +84,9 @@ async function processBtn() {
     );
 
     if (user) {
-            router.push('/home'); // Route to user homepage
+            console.log('routing to /home with userid:', user.id)
+            router.push({ path:'/home', query: { userId: user.id } }); // Route to user homepage, using userId primary key to fetch correct page   
+            
     } else {
         loginError.value = "Invalid Email or Password. Please try again." // Eliminates use of pop-up + Better aesthetics
     }

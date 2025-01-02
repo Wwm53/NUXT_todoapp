@@ -26,8 +26,11 @@ npm run preview
 - Integrating vue_todo into nuxt_todo 
 
 *Theory*
-- GITHUB refresher course
 - SUPABASE SQL WRAPPER (JS -> SQL)
-- HTML POST GET
-
 im using SUPABASE JS SDK
+
+STATUS: Project is now suspended, moving to working on real project
+
+Revisit during free time + Follow-up steps:
+- Implement user-specific landing pages after authentication
+- Re-implement 'todo-app' features on NUXT app
